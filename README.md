@@ -10,6 +10,8 @@ git clone https://github.com/mapbox/cover-bench.git
 node index.js
 ```
 
+##Results
+
 Currently, tile-cover is about an order of magnitude slower than geojson-cover. The main reason for this is that s2 is written in C++, while tile-cover is written in javascript.
 
 ```
