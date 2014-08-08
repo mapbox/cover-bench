@@ -3,12 +3,12 @@ var s2Cover = require('geojson-cover'),
     fs = require('fs')
 
 var counties = JSON.parse(fs.readFileSync('./fixtures/counties.geojson'))
-
+counties.features = counties.features.slice(0, 200)
 console.time('tiles')
 
 counties.features.forEach(function(county){
 	console.time()
-  tileCover.indexes(county.geometry, {min_zoom:1, max_zoom: 12})
+  tileCover.indexes(county.geometry, {min_zoom:1, max_zoom: 8})
 });
 
 console.timeEnd('tiles')
