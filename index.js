@@ -10,7 +10,7 @@ console.time('polygon tiles')
 
 counties.features.forEach(function(county){
 	console.time()
-  tileCover.indexes(county.geometry, {min_zoom:5, max_zoom: 5})
+  tileCover.indexes(county.geometry, {min_zoom:1, max_zoom: 5})
 });
 
 console.timeEnd('polygon tiles')
