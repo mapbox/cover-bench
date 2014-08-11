@@ -39,7 +39,7 @@ console.time('point tiles')
 
 counties.features.forEach(function(fountain){
   console.time()
-  tileCover.indexes(fountain.geometry, {min_zoom:5, max_zoom: 5})
+  tileCover.indexes(fountain.geometry, {min_zoom:1, max_zoom: 5})
 });
 
 console.timeEnd('point tiles')
