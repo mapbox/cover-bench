@@ -15,7 +15,11 @@ node index.js
 Currently, tile-cover is about an order of magnitude slower than geojson-cover. The main reason for this is that s2 is written in C++, while tile-cover is written in javascript.
 
 ```
-indexing 200 polygons:
-tiles: 12938ms
-cells: 1786ms
+Counties:
+polygon tiles: 10801ms
+polygon cells: 2149ms
+
+DC Drinking Fountains:
+point tiles: 9989ms
+point cells: 2074ms
 ```
