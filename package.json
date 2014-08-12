@@ -4,8 +4,10 @@
   "description": "cover-bench ===========",
   "main": "index.js",
   "dependencies": {
+    "benchmark": "~1.0.0",
     "geojson-cover": "^0.1.5",
-    "tile-cover": "^0.1.4"
+    "queue-async": "~1.0.7",
+    "tile-cover": "^0.2.0"
   },
   "devDependencies": {},
   "scripts": {
