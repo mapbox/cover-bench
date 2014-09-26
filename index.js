@@ -17,7 +17,7 @@ function testData(file, callback) {
         name: 'tileCover.indexes',
         fn: function() {
             counties.features.forEach(function(county){
-              global.tileCover.indexes(county.geometry, {min_zoom:1, max_zoom: 5})
+              global.tileCover.indexes(county.geometry, {min_zoom:1, max_zoom: 9})
             });
         },
         setup: function() {
@@ -29,7 +29,7 @@ function testData(file, callback) {
         name: 's2.indexes',
         fn: function() {
             counties.features.forEach(function(county){
-              global.s2Cover.geometryIndexes(county.geometry)
+              global.s2Cover.geometryIndexes(county.geometry, {index_min_level: 1, index_max_level: 10, max_index_cells: 50000000})
             });
         },
         setup: function() {
@@ -49,33 +49,5 @@ function testData(file, callback) {
 
 queue(1)
     .defer(testData, './fixtures/dc_fountains.geojson')
+    .defer(testData, './fixtures/multipoint.geojson')
     .defer(testData, './fixtures/counties.geojson');
-
-/*
-console.log('DC Drinking Fountains:')
-
-var dc_fountains = JSON.parse(fs.readFileSync('./fixtures/dc_fountains.geojson'))
-dc_fountains.features = dc_fountains.features.slice(0, 200)
-console.time('point tiles')
-
-counties.features.forEach(function(fountain){
-  console.time()
-  tileCover.indexes(fountain.geometry, {min_zoom:1, max_zoom: 5})
-});
-
-console.timeEnd('point tiles')
-
-
-console.time('point cells')
-
-counties.features.forEach(function(fountain){
-try{
-  s2Cover.geometryIndexes(fountain.geometry)
-}
-catch(err){
-//console.log('invalid loop')
-}
-});
-
-console.timeEnd('point cells')
-*/

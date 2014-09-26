@@ -7,7 +7,8 @@
     "benchmark": "~1.0.0",
     "geojson-cover": "^0.1.5",
     "queue-async": "~1.0.7",
-    "tile-cover": "^0.2.0"
+    "s2": "^0.3.9",
+    "tile-cover": "^0.6.2"
   },
   "devDependencies": {},
   "scripts": {
